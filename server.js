@@ -1,9 +1,10 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const Mushroom = require('./models/Mushroom');
 
-const poisonousMushrooms = require('./mushroomData/poisonous');
-const deadlyMushrooms = require('./mushroomData/deadly');
+// const poisonousMushrooms = require('./mushroomData/poisonous');
+// const deadlyMushrooms = require('./mushroomData/deadly');
 
 
 const app = express();
@@ -23,12 +24,22 @@ const homepageMsg = `<h1>🍄 API</h1>
 
 app.get('/', (req, res) => res.send(homepageMsg));
 
-app.get('/mushrooms/poisonous', (req, res) => {
-	res.json(poisonousMushrooms);
+app.get('/mushrooms/poisonous', async (req, res) => {
+	try {
+		const poisonousMushrooms = await Mushroom.find({ toxicity: 'poisonous' })
+		res.json(poisonousMushrooms);
+	} catch (err) {
+		console.log(err);
+	}
 });
 
-app.get('/mushrooms/deadly', (req, res) => {
-	res.json(deadlyMushrooms);
+app.get('/mushrooms/deadly', async (req, res) => {
+	try {
+		const deadlyMushrooms = await Mushroom.find({ toxicity: 'poisonous' })
+		res.json(deadlyMushrooms);
+	} catch (err) {
+		console.log(err);
+	}
 });
 
 

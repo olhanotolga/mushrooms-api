@@ -4,6 +4,7 @@
   "description": "Mushrooms API with Node.js and Express",
   "main": "server.js",
   "scripts": {
+		"seed": "node seed/seedScript.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
