@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/olhanotolga/mushrooms-api#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3"
   },
-	"engines": {
-		"node": "14.x"
-	}
+  "engines": {
+    "node": "14.x"
+  }
 }

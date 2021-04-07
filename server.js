@@ -1,4 +1,6 @@
+require('dotenv').config();
 const express = require('express');
+const mongoose = require('mongoose');
 
 const poisonousMushrooms = require('./mushroomData/poisonous');
 const deadlyMushrooms = require('./mushroomData/deadly');
@@ -28,6 +30,19 @@ app.get('/mushrooms/poisonous', (req, res) => {
 app.get('/mushrooms/deadly', (req, res) => {
 	res.json(deadlyMushrooms);
 });
+
+
+
+//* MONGODB CONNECT
+
+mongoose.connect(process.env.MONGO_URI, {
+	useCreateIndex: true,
+	useFindAndModify: false,
+	useUnifiedTopology: true,
+	useNewUrlParser: true
+})
+mongoose.connection.once('open', () => console.log(`⭐️ Connected to the DB!`));
+mongoose.connection.on('error', () => console.log(`☠️ Connection error!`));
 
 
 
