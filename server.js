@@ -35,7 +35,7 @@ app.get('/mushrooms/poisonous', async (req, res) => {
 
 app.get('/mushrooms/deadly', async (req, res) => {
 	try {
-		const deadlyMushrooms = await Mushroom.find({ toxicity: 'poisonous' })
+		const deadlyMushrooms = await Mushroom.find({ toxicity: 'deadly' })
 		res.json(deadlyMushrooms);
 	} catch (err) {
 		console.log(err);
