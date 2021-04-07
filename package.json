@@ -4,6 +4,7 @@
   "description": "Mushrooms API with Node.js and Express",
   "main": "server.js",
   "scripts": {
+		"seed": "node seed/seedScript.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -18,6 +19,11 @@
   },
   "homepage": "https://github.com/olhanotolga/mushrooms-api#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
