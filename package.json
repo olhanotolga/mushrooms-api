@@ -1,0 +1,23 @@
+{
+  "name": "mushrooms-api",
+  "version": "1.0.0",
+  "description": "Mushrooms API with Node.js and Express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olhanotolga/mushrooms-api.git"
+  },
+  "author": "olhanotolga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olhanotolga/mushrooms-api/issues"
+  },
+  "homepage": "https://github.com/olhanotolga/mushrooms-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
